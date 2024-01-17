@@ -5,7 +5,7 @@ A collection of sorting functions, as well as an executable script to validate t
 Uses an iterative loop to fill an array with random integers, and uses recursive implementations of algorithms to sort them.
 
 ## Descriptions
-The sorting algorithms implemeted are explained below
+The sorting algorithms implemeted are explained below.
 
 ### Merge Sort
 The array is initially split into two halves; these halves are then also split into halves until the 
