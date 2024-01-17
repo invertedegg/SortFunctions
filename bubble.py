@@ -6,10 +6,6 @@ arrSize = 100
 
 # Python implementation of bubble sort
 def bubbleSort(arr, idx):
-    # base case
-    if idx == 0:
-        return arr
-    
     place = 0
     while place < idx:
         if arr[place] > arr[place+1]:
@@ -18,8 +14,11 @@ def bubbleSort(arr, idx):
             arr[place+1] = arr[place]
             arr[place] = temp
         place += 1
-    # Completed a pass-through, recurse
-    return bubbleSort(arr, idx - 1)
+    # Completed a pass-through, check for validity
+    if validate(arr):
+        return arr
+    else:
+        return bubbleSort(arr, idx - 1)
 
 def main():
     arr = []
