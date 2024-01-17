@@ -12,3 +12,7 @@ The array is initially split into two halves; these halves are then also split i
 array is a single value. Then, the two arrays are compared, index by index, and merged into a separate 
 array in order from least to greatest. The arrays are sorted in this manner backwards until the initial 
 split is reached, where the two arrays are merged providing a sorted solution.
+
+### Quick Sort
+
+### Bubble Sort
