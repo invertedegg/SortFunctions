@@ -2,28 +2,37 @@ import random as r
 from validate import validate
 
 #Globals
-arrSize = 10
+arrSize = 100
+
+# Function to build an array from the 
+# components of the current sorting iteration
+def buildArr(arrL, par, arrM):
+    arr = []
+    if len(arrL) > 0:
+        for n in arrL:
+            arr.append(n)
+    arr.append(par)
+    if len(arrM) > 0:
+        for n in arrM:
+            arr.append(n)
+    return arr
 
 # Python implementation of quick sort
 def quickSort(arr):
     # base case
     if len(arr) <= 1:
-        print("base")
         return arr
     arrL = []
     arrM = []
     partition = arr.pop()
-    print(partition)
     for v in arr:
         if v <= partition: 
             arrL.append(v)
         else: 
             arrM.append(v)
-    print("arrL: ", arrL)
-    print("arrM: ", arrM)
     arrL = quickSort(arrL)
     arrM = quickSort(arrM)
-    return [arrL, partition, arrM]
+    return buildArr(arrL, partition, arrM)
 
 def main():
     arr = []
@@ -33,9 +42,9 @@ def main():
     sorted = quickSort(arr)
     print(sorted)
     if validate(sorted):
-        print("Merge sort validated")
+        print("Quick sort validated")
     else:
-        print("Merge sort failed")
+        print("Quick sort failed")
 
 if __name__ == "__main__":
     main()
